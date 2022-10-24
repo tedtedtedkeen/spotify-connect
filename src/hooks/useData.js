@@ -7,7 +7,6 @@ export const useData = () => useContext(DataContext);
 const CLIENT_SECRET = process.env.CLIENT_SECRET;
 
 const CLIENT_ID = "51f8524e754f4c0892822b13e1b790dd";
-// const CLIENT_SECRET = "59c5a1c9b8c445c29b1235bad1d4b59c";
 
 function DataProvider({ children }) {
 
