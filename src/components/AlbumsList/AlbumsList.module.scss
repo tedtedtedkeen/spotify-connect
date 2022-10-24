@@ -1,6 +1,23 @@
 
 
+.t {
+  h2 > span {
+    display: none;
+    animation: anima 0.3s linear infinite;
+  }
+}
 
+@keyframes anima {
+  0% {
+    display: inline;
+  }
+  50% {
+    display: none;
+  }
+  100% {
+    display: inline;
+  }
+}
 
 .list {
   width: 964px;

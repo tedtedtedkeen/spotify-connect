@@ -3,8 +3,11 @@ import React, { createContext, useState, useEffect, useContext } from "react";
 const DataContext = createContext();
 export const useData = () => useContext(DataContext);
 
+// const CLIENT_ID = process.env.CLIENT_ID;
+const CLIENT_SECRET = process.env.CLIENT_SECRET;
+
 const CLIENT_ID = "51f8524e754f4c0892822b13e1b790dd";
-const CLIENT_SECRET = "59c5a1c9b8c445c29b1235bad1d4b59c";
+// const CLIENT_SECRET = "59c5a1c9b8c445c29b1235bad1d4b59c";
 
 function DataProvider({ children }) {
 
@@ -38,10 +41,12 @@ function DataProvider({ children }) {
     const artistID = await fetch("https://api.spotify.com/v1/search?q=" + inputValue + "&type=artist", searchParameters)
       .then(res => res.json())
       .then(data => { return data.artists.items[0].id })
+      .catch(e => e.message);
 
     const returnedAlbums = await fetch("https://api.spotify.com/v1/artists/" + artistID + "/albums" + "?include_groups=album&market=RU&limit=9", searchParameters)
       .then(res => res.json())
       .then(data => setData(data.items))
+      .catch(e => e.message);
   }
 
   return (

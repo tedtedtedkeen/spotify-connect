@@ -7,6 +7,8 @@ const AlbumsList = () => {
 
   const { data } = useData();
 
+  if (!data) return <h2 className={styles.t}>Loading<span>.</span><span>.</span><span>.</span></h2>
+
   return (
     <div className={styles.list}>
       {
