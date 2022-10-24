@@ -7,10 +7,10 @@ const Search = () => {
   const { searchAlbums } = useData();
   const [searchInput, setSeactInput] = useState("");
 
-  function search(event) {
-    event.preventDefault();
+  async function search(e) {
+    e && e.preventDefault();
     console.log("Search for " + searchInput);
-    searchAlbums(searchInput);
+    await searchAlbums(searchInput);
     setSeactInput("");
   }
 
@@ -24,7 +24,7 @@ const Search = () => {
         onChange={e => setSeactInput(e.target.value)}
       />
       <button 
-        onClick={search}
+        onClick={e => search(e)}
       >
         Search
       </button>

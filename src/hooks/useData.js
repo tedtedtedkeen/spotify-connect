@@ -4,7 +4,7 @@ const DataContext = createContext();
 export const useData = () => useContext(DataContext);
 
 const CLIENT_ID = "51f8524e754f4c0892822b13e1b790dd";
-const CLIENT_SECRET = "45b0c642511c4900bce6c50081dae821";
+const CLIENT_SECRET = "59c5a1c9b8c445c29b1235bad1d4b59c";
 
 function DataProvider({ children }) {
 
@@ -23,6 +23,7 @@ function DataProvider({ children }) {
     fetch("https://accounts.spotify.com/api/token", authParameters)
       .then(res => res.json())
       .then(data => setAccessToken(data.access_token))
+      .catch(e => e.message)
   }, []);
 
   async function searchAlbums(inputValue) {

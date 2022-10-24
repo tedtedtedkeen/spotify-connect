@@ -6,7 +6,6 @@ import { AlbumsItem } from './components/AlbumsItem/AlbumsItem';
 const AlbumsList = () => {
 
   const { data } = useData();
-  console.log(data);
 
   return (
     <div className={styles.list}>

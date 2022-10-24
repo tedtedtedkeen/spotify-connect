@@ -5,6 +5,7 @@ import { Header } from "./layouts/Header";
 import { Search } from "./layouts/Search";
 
 const App = () => {
+  // console.log(process.env.OTHER);
   return (
     <div>
       <Header />
