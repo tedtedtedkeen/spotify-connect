@@ -1,12 +1,13 @@
 import React, { createContext, useState, useEffect, useContext } from "react";
+import { ID } from "../../hidded";
 
 const DataContext = createContext();
 export const useData = () => useContext(DataContext);
 
-// const CLIENT_ID = process.env.CLIENT_ID;
+// const CLIENT_ID = process.env.ID;
 const CLIENT_SECRET = process.env.CLIENT_SECRET;
 
-const CLIENT_ID = "51f8524e754f4c0892822b13e1b790dd";
+// const CLIENT_ID = "51f8524e754f4c0892822b13e1b790dd";
 
 function DataProvider({ children }) {
 
@@ -19,7 +20,7 @@ function DataProvider({ children }) {
       headers: {
         "Content-Type": "application/x-www-form-urlencoded"
       },
-      body: "grant_type=client_credentials&client_id=" + CLIENT_ID + "&client_secret=" + CLIENT_SECRET
+      body: "grant_type=client_credentials&client_id=" + ID + "&client_secret=" + CLIENT_SECRET
     };
 
     fetch("https://accounts.spotify.com/api/token", authParameters)
