@@ -23,8 +23,10 @@ const Search = () => {
         onKeyPress={e => e.key == "Enter" ? search() : null}
         onChange={e => setSeactInput(e.target.value)}
       />
-      <button 
+      <button
+        className={styles.button}
         onClick={e => search(e)}
+        disabled={!searchInput}
       >
         Search
       </button>
