@@ -7,7 +7,7 @@ import { Search } from "./layouts/Search";
 const App = () => {
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       <div className="body">
         <h1>
           Let's go!

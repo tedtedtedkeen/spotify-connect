@@ -12,7 +12,7 @@ const Search = () => {
     console.log("Search for " + searchInput);
     await searchAlbums(searchInput);
     setSeactInput("");
-  }
+  };
 
   return (
     <form className={styles.form}>
@@ -31,7 +31,7 @@ const Search = () => {
         Search
       </button>
     </form>
-  )
-}
+  );
+};
 
 export { Search };

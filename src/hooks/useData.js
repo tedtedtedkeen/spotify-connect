@@ -1,13 +1,8 @@
 import React, { createContext, useState, useEffect, useContext } from "react";
-import { ID } from "../../hidded";
+import { ID, CLIENT_SECRET } from "../../hidded";
 
 const DataContext = createContext();
 export const useData = () => useContext(DataContext);
-
-// const CLIENT_ID = process.env.ID;
-const CLIENT_SECRET = process.env.CLIENT_SECRET;
-
-// const CLIENT_ID = "51f8524e754f4c0892822b13e1b790dd";
 
 function DataProvider({ children }) {
 
